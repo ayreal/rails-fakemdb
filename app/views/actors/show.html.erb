@@ -1,0 +1,25 @@
+<h1><%= @actor.fullname %></h1>
+<h4>Create New Character</h4>
+
+<%= form_for @character do |f| %>
+<%= f.hidden_field :actor_id, value: @actor.id%>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+
+  <%= fields_for :make_show do |j| %>
+    <%= j.label :show_name %>
+    <%= j.text_field :show_name %><br />
+    <%= j.label :rating %>
+    <%= j.text_field :rating %><br />
+    <%= j.label :network %>
+    <%= j.text_field :network %><br />
+  <% end %>
+  <%= f.submit %>
+<% end %>
+
+<h2>All Characters</h2>
+<ul>
+  <% @characters.each do |character| %>
+    <li><%= link_to character.name, character_path(character) %></li>
+  <% end %>
+</ul>

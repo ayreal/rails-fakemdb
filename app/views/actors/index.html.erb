@@ -1,0 +1,17 @@
+<h1>All Actors</h1>
+
+<div>
+  <%= form_for @actor do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <%= f.submit %>
+  <% end %>
+</div>
+
+  <ul>
+    <% @actors.each do |actor| %>
+      <li><%= link_to actor.fullname, actor_path(actor) %></li>
+    <% end %>
+  </ul>
