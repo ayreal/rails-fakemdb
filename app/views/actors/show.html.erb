@@ -1,18 +1,18 @@
 <h1><%= @actor.fullname %></h1>
 <h4>Create New Character</h4>
-
+Character Info: <br/>
 <%= form_for @character do |f| %>
 <%= f.hidden_field :actor_id, value: @actor.id%>
   <%= f.label :name %>
   <%= f.text_field :name %><br />
-
+Show Info: <br/>
   <%= fields_for :make_show do |j| %>
-    <%= j.label :show_name %>
-    <%= j.text_field :show_name %><br />
+    <%= j.label :name %>
+    <%= j.text_field :name %><br />
     <%= j.label :rating %>
     <%= j.text_field :rating %><br />
-    <%= j.label :network %>
-    <%= j.text_field :network %><br />
+    <%= j.label :network_id %>
+    <%= j.text_field :network_id %><br />
   <% end %>
   <%= f.submit %>
 <% end %>

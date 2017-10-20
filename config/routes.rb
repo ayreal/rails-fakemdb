@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :networks, only: [:index]
+  resources :networks, only: [:index,:create]
   resources :show, only: [:create]
   resources :characters, only: [:show, :create, :edit, :update, :destroy]
   resources :actors, only: [:index,:show,:create]
